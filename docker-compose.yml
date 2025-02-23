@@ -1,0 +1,18 @@
+services:
+
+  nodered:
+    image: 5minds/processcube_lowcode_auth:dev
+    build:
+      context: .
+    ports:
+      # node-red port
+      - 1880:1880
+      # debugger port
+      - 9229:9229
+    environment:
+      # start node-red with debugger port open
+      NODE_OPTIONS: --inspect=0.0.0.0:9229
+    volumes:
+      # save the flows
+      - ./data:/data
+  

@@ -1,0 +1,75 @@
+[
+    {
+        "id": "7a17c14c9faa9a8a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2d08671103310dd5",
+        "type": "function",
+        "z": "7a17c14c9faa9a8a",
+        "name": "function 1",
+        "func": "debugger;\n\nmsg.payload = {\n    \"hello\": \"debugger\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "f6f5df26cb4c4d81"
+            ]
+        ]
+    },
+    {
+        "id": "f6f5df26cb4c4d81",
+        "type": "debug",
+        "z": "7a17c14c9faa9a8a",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "785b7b23a38beddb",
+        "type": "inject",
+        "z": "7a17c14c9faa9a8a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "2d08671103310dd5"
+            ]
+        ]
+    }
+]
